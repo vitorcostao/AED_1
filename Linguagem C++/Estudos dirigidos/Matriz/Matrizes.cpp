@@ -24,25 +24,31 @@ void pause(std::string text){
 
 void metodo_01(){
 
-     Matrix <int> matrix(2, 2, 0);
+    //Definir dados
+    Matrix <int> matrix(2, 2, 0);
 
-     matrix.set(0, 0, 1); matrix.set(0, 1, 2);
-     matrix.set(1, 0, 3); matrix.set(1, 1, 4);
+    matrix.set(0, 0, 1); matrix.set(0, 1, 2);
+    matrix.set(1, 0, 3); matrix.set(1, 1, 4);
 
-     cout << "\nExercicio 01 - v0.0\n" << endl;
+    //Identificar
+    cout << "\nExercicio 01 - v0.0\n" << endl;
 
-     matrix.print();
+    //Funcoes a serem aplicadas
+    matrix.print();
 
-     pause("Apertar ENTER para continuar");
+    pause("Apertar ENTER para continuar");
 }
 
 
 void metodo_02(){
 
+    //Definir dados
      Matrix <int> matrix(2, 2, 0);
 
+    //Identificar
      cout << "\nExercicio 02 - v0.0\n" << endl;
 
+    //Funcoes a serem aplicadas
      matrix.read();
      cout << endl;
      matrix.print();
@@ -53,44 +59,83 @@ void metodo_02(){
 
 void metodo_03(){
 
+    //Definir dados
      Matrix <int> matrix(2, 2, 0);
 
+    //Identificar
      cout << "\nExercicio 03 - v0.0\n" << endl;
 
-     //Para testar futuramente com outros metodos
-     matrix.read();
-     cout << endl;
-     matrix.fprint("DADOS1.TXT");
+    //Funcoes a serem aplicadas
+    //Para testar futuramente com outros metodos
+    matrix.read();
+    cout << endl;
+    matrix.fprint("DADOS1.TXT");
 
-     //Para testar futuramente com outros metodos
-     matrix.read();
-     cout << endl;
-     matrix.fprint("DADOS2.TXT");
+    //Para testar futuramente com outros metodos
+    matrix.read();
+    cout << endl;
+    matrix.fprint("DADOS2.TXT");
 
-     pause("Apertar ENTER para continuar");
+    pause("Apertar ENTER para continuar");
 }
 
 void metodo_04(){
 
-     Matrix <int> matrix1(2, 2, 0);
+    //Definir dados
+    Matrix <int> matrix1(2, 2, 0);
 
-     cout << "\nExercicio 04 - v0.0\n"        << endl;
+    //Identificar
+    cout << "\nExercicio 04 - v0.0\n" << endl;
 
-     cout << "\nMatrix 1: " << endl;
-     matrix1.fread("DADOS1.TXT");
-     matrix1.print();
+    cout << "\nMatrix 1: " << endl;
+    matrix1.fread("DADOS1.TXT");
+    matrix1.print();
 
-
-
-     pause("Apertar ENTER para continuar");
+    pause("Apertar ENTER para continuar");
 }
 
 void metodo_05(){
 
+    //Definir dados
+    Matrix <int> matrix1(1, 1, 0);
+    Matrix <int> matrix2(1, 1, 0);
+
+    //Identificar
+    cout << "\nExercicio 05 - v0.0\n" << endl;
+
+    //Funcoes a serem aplicadas
+    cout << "\nOriginal: " << endl;
+    matrix1.fread("DADOS1.TXT");
+    matrix1.print();
+
+    cout << "\nCopia: " << endl;
+    matrix2 = matrix1;
+    matrix2.print();
+
+    pause("Apertar ENTER para continuar");
 }
 
 void metodo_06(){
 
+    //Definir dados
+    Matrix <int> matrix(2, 2, 0);
+
+    //Identificar
+    cout << "\nExercicio 06 - v0.0" << endl;
+
+    //Funcoes a serem aplicadas
+    matrix.set(0, 0, 0); matrix.set(0, 1, 0);
+    matrix.set(1, 0, 0); matrix.set(1, 1, 0);
+    matrix.print();
+    cout << "\nZeros: " << matrix.isZeros() << endl;
+
+    cout << endl;
+
+    matrix.fread("DADOS1.TXT");
+    matrix.print();
+    cout << "\nZeros: " << matrix.isZeros() << endl;
+
+    pause("Apertar ENTER para continuar");
 }
 
 void metodo_07(){

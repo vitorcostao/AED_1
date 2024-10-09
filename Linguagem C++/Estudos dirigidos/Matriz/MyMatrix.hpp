@@ -248,7 +248,7 @@ public:
 
                             for(int k = 0; k <= i; k++){
 
-                                delete[] data[k]; // Libera a memória alocada até agora
+                                delete[] data[k]; // Libera a memï¿½ria alocada atï¿½ agora
                             }
 
                             delete[] data;
@@ -271,9 +271,56 @@ public:
         file.close();
     }
 
+    Matrix& operator=(const Matrix <T> &other){
 
 
+        if(other.rows <= 0 || other.cols <= 0){
 
+            cerr << "\nERROR: Missing data" << endl;
+        
+        } else {
+
+            this->rows = other.rows;
+            this->cols = other.cols;
+            this->data = new T* [rows];
+            for(int i = 0; i < this->rows; i++){
+                
+                this->data[i] = new T[cols];
+            }
+
+            for(int i = 0; i < this->rows; i++){
+                for(int j = 0; j < this->cols; j++){
+
+                    this->data[i][j] = other.data[i][j];
+                }
+            }
+        }
+
+        return *this;
+    }
+
+    bool isZeros(){
+
+        if(rows <= 0 || cols <= 0){
+
+            return false;
+        
+        } else {
+
+            int i = 0, j = 0;
+            bool result = true;
+            while (i < rows && result){
+                while (j < cols && result){
+                    
+                    result = result && (data[i][j] == 0);
+                    j++;
+                }
+                i++;
+            }
+
+            return result;
+        }
+    }
 
 };
 
